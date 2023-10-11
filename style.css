@@ -1,0 +1,93 @@
+body {
+    font-size: 18px;
+}
+
+div {
+    margin: 20px 0 0 10px;
+}
+
+label {
+    font-size: 23px;
+}
+
+input {
+    outline: none;
+    border: 1px solid black;
+    padding: 10px;
+    width: 35%;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    transition: 900ms;
+    background-color: rgb(218, 210, 210);
+}
+
+input:focus {
+    width: 60%;
+    background-color: rgb(175, 198, 214);
+}
+
+button {
+    border: 1px solid black;
+    padding: 12px 20px;
+    border-radius: 20px;
+    background-color: rgb(218, 210, 210);
+    font-size: 15px;
+    transition: 300ms;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(175, 214, 194);
+    transform: scale(105%);
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    width: max-content;
+    padding: 5px 10px;
+    margin: 10px 0;
+    background-color: rgb(214, 202, 175);
+    font-size: 25px;
+    border-radius: 5px;
+}
+
+li {
+    
+}
+
+p {
+    display: none;
+    font-size: 28px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(214, 202, 175);
+    animation: show 900ms forwards;
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes lis {
+    from {
+        opacity: 0;
+        transform: translate3d(-50px, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}

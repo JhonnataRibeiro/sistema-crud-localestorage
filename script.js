@@ -32,37 +32,6 @@ verificar.addEventListener('click', function() {
     } else {
         geraMensagem('ALERT: Esse nome já existe no banco', 'rgb(218, 209, 168)');
     }
-
-    // Array.from(nomesOBJECT).forEach(function(object) {
-    //     if (object.nome === input.value) {
-    //         geraMensagem('ALERT: Esse nome já existe no banco', 'rgb(218, 209, 168)');
-    //     }
-    // });
-
-    // Array.from(nomesOBJECT).every(function(object) {
-    //     if (object.nome !== input.value) {
-    //         geraMensagem('OK: Nome disponivel para adicionar', 'rgb(218, 209, 168)');
-    //     }
-    // });
-
-    for(let chave in nomesOBJECT) {
-        // else if (nomesOBJECT[chave].nome === input.value) {
-            
-        // } else {
-        //     geraMensagem('OK: Nome disponivel para adicionar', 'rgb(168, 218, 168)');
-        // }
-
-
-        // if (nomesOBJECT[chave].nome === input.value) {
-        //     p.style.backgroundColor = 'lightcoral';
-        //     p.textContent = 'Status 190: Nome já existe no banco pai, escreve outro';
-        //     setTimeout(function() {
-        //         p.textContent = '';
-        //     }, 4000);
-        // } else {
-        //     p.textContent = 'Nome disponível para adicionar';
-        // }
-    }
 });
 
 listar.addEventListener('click', function() {
@@ -82,12 +51,6 @@ listar.addEventListener('click', function() {
         tempoAnimaticao += 100;
         ul.appendChild(criaLi);
     });
-
-
-    // const allLis = document.querySelectorAll('li')
-
-    // ul.innerHTML = '';
-    // Array.from(nomesOBJECT).forEach((objeto) => ul.innerHTML += `<li>${objeto.nome}</li>`);
 });
 
 adicionar.addEventListener('click', function() {
@@ -139,55 +102,35 @@ exluir.addEventListener('click', function() {
             }
         }
     }
-    
-    
-    // else {
-    //     for (let chave in nomesOBJECT) {
-    //         if (nomesOBJECT[chave].nome === input.value) {
-    //             nomesOBJECT.splice(chave, 1);
-    //             geraMensagem('SUCCESS: Nome removido', 'rgb(218, 209, 168)');
-    //         } else {
-                
-    //         }
-    //     }
-    // }
 
     let subirJSON = JSON.stringify(nomesOBJECT);
         
     localStorage.setItem('meuSQL', subirJSON);
-
-    // let filtradoJSON = nomesOBJECT.filter(function(item) {
-    //     return item.value !== '';
-    // });
-
-    // let subirJSON = JSON.stringify(nomesOBJECT);
-
-    // localStorage.setItem('meuSQL', subirJSON);
-
-    // p.style.backgroundColor = 'lightyellow';
-    // p.textContent = 'Status 24: Tu é doido menor, tu executou o menor pai';
-    // setTimeout(function() {
-    //     p.textContent = '';
-    // }, 4000);
-})
+});
 
 
 
+/* Gerando o Banco */
+(function() {
+    const meuBanco = localStorage.getItem('meuSQL');
 
-/* Outra parte */
+    if (meuBanco) {
+        console.log('Status Banco: OK');
+    } else {
+        console.log('Status Banco: Criado!');
+        
+        const nomes = [
+            {nome: 'Roberto'},
+            {nome: 'Marcela'},
+            {nome: 'João'},
+            {nome: 'Jhonnata'},
+            {nome: 'Carlos'},
+            {nome: 'Helenna'},
+            {nome: 'Giovanna'},
+        ];
 
-const nomes = [
-    {nome: 'Roberto'},
-    {nome: 'Marcela'},
-    {nome: 'João'},
-    {nome: 'Jhonnata'},
-    {nome: 'Carlos'},
-    {nome: 'Helenna'},
-    {nome: 'Giovanna'},
-];
+        const nomesJSON = JSON.stringify(nomes);
 
-const nomesJSON = JSON.stringify(nomes);
-
-localStorage.setItem('meuSQL', nomesJSON);
-
-console.log(localStorage.getItem('meuSQL'));
+        localStorage.setItem('meuSQL', nomesJSON);
+    }
+})();

@@ -35,7 +35,7 @@ verificar.addEventListener('click', function() {
 
     const todosLi = document.querySelectorAll('li');
 
-    todosLi.forEach((item) => { /* dddddddddddddddddddddddddddddddddddddddd */
+    todosLi.forEach((item) => {
         item.style.animation = `saindo ${1500}ms forwards`;
     });
 });
@@ -87,7 +87,7 @@ adicionar.addEventListener('click', function() {
 
     const todosLi = document.querySelectorAll('li');
 
-    todosLi.forEach((item) => { /* dddddddddddddddddddddddddddddddddddddddd */
+    todosLi.forEach((item) => {
         item.style.animation = `saindo ${1500}ms forwards`;
     });
 });
@@ -121,7 +121,7 @@ exluir.addEventListener('click', function() {
 
     const todosLi = document.querySelectorAll('li');
 
-    todosLi.forEach((item) => { /* dddddddddddddddddddddddddddddddddddddddd */
+    todosLi.forEach((item) => {
         item.style.animation = `saindo ${1500}ms forwards`;
     });
 });

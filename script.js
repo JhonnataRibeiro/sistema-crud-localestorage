@@ -127,7 +127,6 @@ exluir.addEventListener('click', function() {
 });
 
 
-
 /* Gerando o Banco */
 (function() {
     const meuBanco = localStorage.getItem('meuSQL');

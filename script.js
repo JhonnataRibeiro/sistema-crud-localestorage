@@ -17,6 +17,10 @@ function geraMensagem(mensagem, cor) {
     }, 4000);
 }
 
+const rgbVerde = 'rgb(155, 212, 160)';
+const rgbAmarelo = 'rgb(218, 209, 168)';
+const rgbVermelho = 'rgb(240, 128, 128)';
+
 verificar.addEventListener('click', function() {
     let nomesJSON = localStorage.getItem('meuSQL');
     let nomesOBJECT = JSON.parse(nomesJSON);
@@ -26,11 +30,11 @@ verificar.addEventListener('click', function() {
     });
 
     if (input.value === '') {
-        geraMensagem('ALERT: O campo está vazio', 'lightcoral');
+        geraMensagem('ALERT: O campo está vazio', `${rgbAmarelo}`);
     } else if (resultado) {
-        geraMensagem('OK: Nome disponivel para adicionar', 'rgb(218, 209, 168)');
+        geraMensagem('OK: Nome disponivel para adicionar', `${rgbVerde}`);
     } else {
-        geraMensagem('ALERT: Esse nome já existe no banco', 'rgb(218, 209, 168)');
+        geraMensagem('ALERT: Esse nome já existe no banco', `${rgbAmarelo}`);
     }
 
     const todosLi = document.querySelectorAll('li');
@@ -68,7 +72,7 @@ adicionar.addEventListener('click', function() {
     });
 
     if (input.value === '') {
-        geraMensagem('ALERT: xxxxxxxxx', 'rgb(218, 209, 168)');
+        geraMensagem('ALERT: O campo está vazio, não pode adicionar assim', 'rgb(218, 209, 168)');
     } else if (resultado) {
         let novoObjeto = {
             nome: input.value

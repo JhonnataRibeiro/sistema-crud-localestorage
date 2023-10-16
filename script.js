@@ -32,6 +32,12 @@ verificar.addEventListener('click', function() {
     } else {
         geraMensagem('ALERT: Esse nome já existe no banco', 'rgb(218, 209, 168)');
     }
+
+    const todosLi = document.querySelectorAll('li');
+
+    todosLi.forEach((item) => { /* dddddddddddddddddddddddddddddddddddddddd */
+        item.style.animation = `saindo ${1500}ms forwards`;
+    });
 });
 
 listar.addEventListener('click', function() {
@@ -78,6 +84,12 @@ adicionar.addEventListener('click', function() {
     } else {
         geraMensagem('ERROR: Nome não adicionado pois já existe no banco de dados', 'rgb(218, 209, 168)');
     }
+
+    const todosLi = document.querySelectorAll('li');
+
+    todosLi.forEach((item) => { /* dddddddddddddddddddddddddddddddddddddddd */
+        item.style.animation = `saindo ${1500}ms forwards`;
+    });
 });
 
 exluir.addEventListener('click', function() {
@@ -106,6 +118,12 @@ exluir.addEventListener('click', function() {
     let subirJSON = JSON.stringify(nomesOBJECT);
         
     localStorage.setItem('meuSQL', subirJSON);
+
+    const todosLi = document.querySelectorAll('li');
+
+    todosLi.forEach((item) => { /* dddddddddddddddddddddddddddddddddddddddd */
+        item.style.animation = `saindo ${1500}ms forwards`;
+    });
 });
 
 

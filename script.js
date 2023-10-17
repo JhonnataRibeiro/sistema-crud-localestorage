@@ -18,7 +18,7 @@ function geraMensagem(mensagem, cor) {
 }
 
 const rgbVerde = 'rgb(155, 212, 160)';
-const rgbAmarelo = 'rgb(218, 209, 168)';
+const rgbAmarelo = 'rgb(233, 204, 131)';
 const rgbVermelho = 'rgb(240, 128, 128)';
 
 verificar.addEventListener('click', function() {
@@ -72,7 +72,7 @@ adicionar.addEventListener('click', function() {
     });
 
     if (input.value === '') {
-        geraMensagem('ALERT: O campo está vazio, não pode adicionar assim', 'rgb(218, 209, 168)');
+        geraMensagem('ALERT: O campo está vazio, não pode adicionar assim', `${rgbAmarelo}`);
     } else if (resultado) {
         let novoObjeto = {
             nome: input.value
@@ -84,9 +84,9 @@ adicionar.addEventListener('click', function() {
         
         localStorage.setItem('meuSQL', subirJSON);
 
-        geraMensagem('SUCCESS: Nome disponivel para adicionar', 'rgb(218, 209, 168)');
+        geraMensagem('SUCCESS: Nome disponivel para adicionar', `${rgbVerde}`);
     } else {
-        geraMensagem('ERROR: Nome não adicionado pois já existe no banco de dados', 'rgb(218, 209, 168)');
+        geraMensagem('ERROR: Nome não adicionado pois já existe no banco de dados', `${rgbVermelho}`);
     }
 
     const todosLi = document.querySelectorAll('li');
@@ -105,14 +105,14 @@ exluir.addEventListener('click', function() {
     });
 
     if (input.value === '') {
-        geraMensagem('ALERT: O campo está vazio', 'rgb(218, 209, 168)');
+        geraMensagem('ALERT: O campo está vazio', `${rgbAmarelo}`);
     } else if (resultado) {
-        geraMensagem('ERROR: Não é possivel excluir um nome que não existente', 'rgb(218, 209, 168)');
+        geraMensagem('ERROR: Não é possivel excluir um nome que não existe', `${rgbVermelho}`);
     } else {
         for (let chave in nomesOBJECT) {
             if (nomesOBJECT[chave].nome === input.value) {
                 nomesOBJECT.splice(chave, 1);
-                geraMensagem('SUCCESS: Nome removido', 'rgb(218, 209, 168)');
+                geraMensagem('SUCCESS: Nome removido', `${rgbVerde}`);
             } else {
                 
             }
